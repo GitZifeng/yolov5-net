@@ -10,9 +10,9 @@ namespace Yolov5Net.App
     {
         static void Main(string[] args)
         {
-            using var image = Image.FromFile("Assets/test.jpg");
+            using var image = Image.FromFile("Assets/4.png");
 
-            using var scorer = new YoloScorer<YoloCocoP5Model>("Assets/Weights/yolov5n.onnx");
+            using var scorer = new YoloScorer<YoloCocoP5Model>("Assets/Weights/mao.onnx");//yolov5n.onnx     mao.pt  mao.onnx
 
             List<YoloPrediction> predictions = scorer.Predict(image);
 
@@ -32,7 +32,7 @@ namespace Yolov5Net.App
                     new PointF(x, y));
             }
 
-            image.Save("Assets/result.jpg");
+            image.Save("Assets/4.jpg");
         }
     }
 }
